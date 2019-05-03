@@ -1,0 +1,10 @@
+﻿những table cần tạo: 
+admin ( id, name, email, pass)
+user (id, name, email, pass, ngay sinh, số điện thoại, ngày tạo, địa chỉ)
+loại sản phẩm(id, loại sản phẩm)
+sản phẩm (id, id loại sản phẩm, tên, giá, discount, mô tả, chất liệu, màu sắc, kích thước, xuất sứ, image, image_list, số lượng)
+đơn hàng (id, id_user,giảm giá, tổng tiền, ngày tạo, trạng thái, tên khách hàng, địa chỉ giao, số điện thoại, thanh toán)
+chi tiết đơn hàng( id đơn hàng, id sản phẩm, số lượng, đơn giá)
+giỏ hàng( id giỏ hàng, id user)
+chi tiết giỏ hàng( id giỏ hàng, id sản phẩm, số lượng)
+yêu thích(id sản phẩm, id user)
