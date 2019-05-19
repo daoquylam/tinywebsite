@@ -22,42 +22,6 @@ Class MY_Controller extends CI_Controller
             default:
                 {
                     //xu ly du lieu o trang ngoai
-                    //lay danh sach danh muc san pham
-                    $this->load->model('sanpham_model');
-                    $input = array();
-                    $input['where'] = array('ID_LoaiSanPham' => 1);// lay sp ở table sanpham có id loại sản phẩm la	
-                    $input['limit'] = array(6,0);
-                    $catalog_list = $this->sanpham_model->get_list($input);// lay danh sach 
-                    foreach ($catalog_list as $row)
-                    {
-                        $input['where'] = array('parent_id' => $row->id);
-                        $subs = $this->catalog_model->get_list($input);
-                        $row->subs = $subs;
-                    }
-                    $this->data['catalog_list'] = $catalog_list;//load du lieu cua catalog la data
-                    
-                    //lay danh sach bai viet moi
-                    $this->load->model('news_model');
-                    $input = array();
-                    $input['limit'] = array(5, 0);
-                    $news_list = $this->news_model->get_list($input);
-                    $this->data['news_list'] = $news_list;
-					
-					 //kiem tra xem thanh vien da dang nhap hay chua
-                    $user_id_login = $this->session->userdata('user_id_login');
-                    $this->data['user_id_login'] = $user_id_login;
-                    //neu da dang nhap thi lay thong tin cua thanh vien
-                    if($user_id_login)
-                    {
-                        $this->load->model('user_model');
-                        $user_info = $this->user_model->get_info($user_id_login);
-                        $this->data['user_info'] = $user_info;
-                    }
-					
-					
-					//goi toi thu vien
-					$this->load->library('cart');
-					$this->data['total_items']=$this->cart->total_items();
                 }
             
         }
@@ -68,21 +32,6 @@ Class MY_Controller extends CI_Controller
      */
     private function _check_login()
     {
-        $controller = $this->uri->rsegment('1');
-        $controller = strtolower($controller);
-    
-        $login = $this->session->userdata('login');
-        //neu ma chua dang nhap,ma truy cap 1 controller khac login
-        if(!$login && $controller != 'login')
-        {
-            redirect(admin_url('login'));
-        }
-        //neu ma admin da dang nhap thi khong cho phep vao trang login nua.
-        if($login && $controller == 'login')
-        {
-            redirect(admin_url('home'));
-        }
+        
     }
 }
-
-

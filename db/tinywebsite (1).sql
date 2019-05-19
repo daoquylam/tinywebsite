@@ -2,10 +2,10 @@
 -- version 4.8.5
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: May 06, 2019 at 05:05 PM
--- Server version: 10.1.38-MariaDB
--- PHP Version: 7.1.28
+-- Máy chủ: 127.0.0.1
+-- Thời gian đã tạo: Th5 17, 2019 lúc 06:10 PM
+-- Phiên bản máy phục vụ: 10.1.38-MariaDB
+-- Phiên bản PHP: 7.3.2
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -19,219 +19,249 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `tinywebsite`
+-- Cơ sở dữ liệu: `tinywebsite`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `admin`
---
-
-CREATE TABLE `admin` (
-  `ID` int(4) NOT NULL,
-  `HoTen` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `Email` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `MatKhau` varchar(255) COLLATE utf8_unicode_ci NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `chitietdonhang`
+-- Cấu trúc bảng cho bảng `chitietdonhang`
 --
 
 CREATE TABLE `chitietdonhang` (
   `IDDonHang` int(11) NOT NULL,
   `IDSanPham` int(11) NOT NULL,
-  `SoLuong` int(11) NOT NULL,
-  `DonGia` int(11) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+  `SoLuong` int(11) DEFAULT NULL,
+  `DonGia` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `chitietgiohang`
+-- Cấu trúc bảng cho bảng `chitietgiohang`
 --
 
 CREATE TABLE `chitietgiohang` (
   `IDGioHang` int(11) NOT NULL,
   `IDSanPham` int(11) NOT NULL,
-  `SoLuong` int(11) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+  `SoLuong` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `donhang`
+-- Cấu trúc bảng cho bảng `donhang`
 --
 
 CREATE TABLE `donhang` (
-  `ID` int(11) NOT NULL,
-  `IDUser` int(11) NOT NULL,
-  `MaGiamGia` varchar(255) CHARACTER SET utf32 COLLATE utf32_unicode_ci NOT NULL,
-  `TongTien` float NOT NULL,
-  `NgayTao` date NOT NULL,
-  `TrangThai` varchar(255) CHARACTER SET utf32 COLLATE utf32_unicode_ci NOT NULL,
-  `TenKH` varchar(255) CHARACTER SET utf32 COLLATE utf32_unicode_ci NOT NULL,
-  `DiaChiGiao` varchar(255) CHARACTER SET utf32 COLLATE utf32_unicode_ci NOT NULL,
-  `SoDienThoai` int(10) NOT NULL,
-  `ThanhToan` varchar(255) CHARACTER SET utf32 COLLATE utf32_unicode_ci NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+  `IDDonHang` int(11) NOT NULL,
+  `IDUser` int(11) DEFAULT NULL,
+  `MaGiamGia` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `TongTien` float DEFAULT NULL,
+  `NgayTao` date DEFAULT NULL,
+  `TrangThai` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `TenKH` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `DiaChiGiao` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `SoDienThoai` int(11) DEFAULT NULL,
+  `ThanhToan` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `giohang`
+-- Cấu trúc bảng cho bảng `giohang`
 --
 
 CREATE TABLE `giohang` (
   `IDGioHang` int(11) NOT NULL,
-  `IDUser` int(11) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+  `IDUser` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `loaisanpham`
+-- Cấu trúc bảng cho bảng `id_admin`
+--
+
+CREATE TABLE `id_admin` (
+  `ID` int(11) NOT NULL,
+  `Hoten` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `Email` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `Matkhau` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `loaisanpham`
 --
 
 CREATE TABLE `loaisanpham` (
-  `ID` int(11) NOT NULL,
-  `Ten` varchar(255) COLLATE utf8_unicode_ci NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+  `IDLoaiSanPham` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `Ten` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `sanpham`
+-- Cấu trúc bảng cho bảng `sanpham`
 --
 
 CREATE TABLE `sanpham` (
-  `ID` int(4) NOT NULL,
-  `ID_LoaiSanPham` int(11) NOT NULL,
-  `TenSanPham` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `Gia` int(11) NOT NULL,
-  `GiamGia` int(11) NOT NULL,
-  `MoTa` text COLLATE utf8_unicode_ci NOT NULL,
-  `ChatLieu` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `MauSac` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `KichThuoc` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `XuatXu` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `Image` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `ImageList` text COLLATE utf8_unicode_ci NOT NULL,
-  `SoLuong` int(11) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+  `IDSanPham` int(11) NOT NULL,
+  `IDLoaiSanPham` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `TenSanPham` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `Gia` int(11) DEFAULT NULL,
+  `GiamGia` int(11) DEFAULT NULL,
+  `MoTa` text COLLATE utf8_unicode_ci,
+  `ChatLieu` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `MauSac` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `KichThuoc` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `XuatXu` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `Imagee` text COLLATE utf8_unicode_ci,
+  `SoLuong` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `user`
+-- Cấu trúc bảng cho bảng `users`
 --
 
-CREATE TABLE `user` (
-  `ID` int(4) NOT NULL,
+CREATE TABLE `users` (
+  `IDUser` int(11) NOT NULL,
   `HoTen` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `Email` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `MatKhau` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `NgaySinh` date NOT NULL,
-  `SoDienThoai` int(10) NOT NULL,
+  `Matkhau` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `Ngaysinh` date DEFAULT NULL,
+  `SoDienThoai` int(11) NOT NULL,
   `DiaChi` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `NgayTao` date NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+  `NgayTao` date DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `yeuthich`
+-- Cấu trúc bảng cho bảng `yeuthich`
 --
 
 CREATE TABLE `yeuthich` (
   `IDUser` int(11) NOT NULL,
   `IDSanPham` int(11) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Indexes for dumped tables
+-- Chỉ mục cho các bảng đã đổ
 --
 
 --
--- Indexes for table `admin`
---
-ALTER TABLE `admin`
-  ADD PRIMARY KEY (`ID`),
-  ADD UNIQUE KEY `Email` (`Email`);
-
---
--- Indexes for table `chitietdonhang`
+-- Chỉ mục cho bảng `chitietdonhang`
 --
 ALTER TABLE `chitietdonhang`
-  ADD PRIMARY KEY (`IDDonHang`,`IDSanPham`);
+  ADD PRIMARY KEY (`IDDonHang`,`IDSanPham`),
+  ADD KEY `IDSanPham` (`IDSanPham`);
 
 --
--- Indexes for table `chitietgiohang`
+-- Chỉ mục cho bảng `chitietgiohang`
 --
 ALTER TABLE `chitietgiohang`
-  ADD PRIMARY KEY (`IDGioHang`,`IDSanPham`);
+  ADD PRIMARY KEY (`IDGioHang`,`IDSanPham`),
+  ADD KEY `IDSanPham` (`IDSanPham`);
 
 --
--- Indexes for table `donhang`
+-- Chỉ mục cho bảng `donhang`
 --
 ALTER TABLE `donhang`
-  ADD PRIMARY KEY (`ID`);
+  ADD PRIMARY KEY (`IDDonHang`),
+  ADD KEY `IDUser` (`IDUser`);
 
 --
--- Indexes for table `giohang`
+-- Chỉ mục cho bảng `giohang`
 --
 ALTER TABLE `giohang`
-  ADD PRIMARY KEY (`IDGioHang`);
+  ADD PRIMARY KEY (`IDGioHang`),
+  ADD KEY `IDUser` (`IDUser`);
 
 --
--- Indexes for table `loaisanpham`
+-- Chỉ mục cho bảng `id_admin`
+--
+ALTER TABLE `id_admin`
+  ADD PRIMARY KEY (`ID`);
+
+--
+-- Chỉ mục cho bảng `loaisanpham`
 --
 ALTER TABLE `loaisanpham`
-  ADD PRIMARY KEY (`ID`);
+  ADD PRIMARY KEY (`IDLoaiSanPham`);
 
 --
--- Indexes for table `sanpham`
+-- Chỉ mục cho bảng `sanpham`
 --
 ALTER TABLE `sanpham`
-  ADD PRIMARY KEY (`ID`);
+  ADD PRIMARY KEY (`IDSanPham`),
+  ADD KEY `sanpham` (`IDLoaiSanPham`);
 
 --
--- Indexes for table `user`
+-- Chỉ mục cho bảng `users`
 --
-ALTER TABLE `user`
-  ADD PRIMARY KEY (`ID`),
-  ADD UNIQUE KEY `Email` (`Email`);
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`IDUser`);
 
 --
--- Indexes for table `yeuthich`
+-- Chỉ mục cho bảng `yeuthich`
 --
 ALTER TABLE `yeuthich`
-  ADD PRIMARY KEY (`IDUser`,`IDSanPham`);
+  ADD PRIMARY KEY (`IDUser`,`IDSanPham`),
+  ADD KEY `IDSanPham` (`IDSanPham`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- Các ràng buộc cho các bảng đã đổ
 --
 
 --
--- AUTO_INCREMENT for table `admin`
+-- Các ràng buộc cho bảng `chitietdonhang`
 --
-ALTER TABLE `admin`
-  MODIFY `ID` int(4) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `chitietdonhang`
+  ADD CONSTRAINT `chitietdonhang_ibfk_1` FOREIGN KEY (`IDDonHang`) REFERENCES `donhang` (`IDDonHang`),
+  ADD CONSTRAINT `chitietdonhang_ibfk_2` FOREIGN KEY (`IDSanPham`) REFERENCES `sanpham` (`IDSanPham`);
 
 --
--- AUTO_INCREMENT for table `donhang`
+-- Các ràng buộc cho bảng `chitietgiohang`
+--
+ALTER TABLE `chitietgiohang`
+  ADD CONSTRAINT `chitietgiohang_ibfk_1` FOREIGN KEY (`IDGioHang`) REFERENCES `giohang` (`IDGioHang`),
+  ADD CONSTRAINT `chitietgiohang_ibfk_2` FOREIGN KEY (`IDSanPham`) REFERENCES `sanpham` (`IDSanPham`);
+
+--
+-- Các ràng buộc cho bảng `donhang`
 --
 ALTER TABLE `donhang`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
+  ADD CONSTRAINT `donhang_ibfk_1` FOREIGN KEY (`IDUser`) REFERENCES `users` (`IDUser`);
 
 --
--- AUTO_INCREMENT for table `sanpham`
+-- Các ràng buộc cho bảng `giohang`
+--
+ALTER TABLE `giohang`
+  ADD CONSTRAINT `giohang_ibfk_1` FOREIGN KEY (`IDUser`) REFERENCES `users` (`IDUser`);
+
+--
+-- Các ràng buộc cho bảng `id_admin`
+--
+ALTER TABLE `id_admin`
+  ADD CONSTRAINT `id_admin_ibfk_1` FOREIGN KEY (`ID`) REFERENCES `users` (`IDUser`);
+
+--
+-- Các ràng buộc cho bảng `sanpham`
 --
 ALTER TABLE `sanpham`
-  MODIFY `ID` int(4) NOT NULL AUTO_INCREMENT;
+  ADD CONSTRAINT `sanpham` FOREIGN KEY (`IDLoaiSanPham`) REFERENCES `loaisanpham` (`IDLoaiSanPham`);
+
+--
+-- Các ràng buộc cho bảng `yeuthich`
+--
+ALTER TABLE `yeuthich`
+  ADD CONSTRAINT `yeuthich` FOREIGN KEY (`IDUser`) REFERENCES `users` (`IDUser`),
+  ADD CONSTRAINT `yeuthich_ibfk_1` FOREIGN KEY (`IDSanPham`) REFERENCES `sanpham` (`IDSanPham`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

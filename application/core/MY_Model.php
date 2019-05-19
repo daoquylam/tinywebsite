@@ -5,7 +5,7 @@ class MY_Model extends CI_Model {
 	var $table = '';
 	
 	// Key chinh cua table
-	var $key = 'id';
+	var $key = '';
 	
 	// Order mac dinh (VD: $order = array('id', 'desc))
 	var $order = '';
@@ -240,8 +240,8 @@ class MY_Model extends CI_Model {
 		else
 		{
 			//mặc định sẽ sắp xếp theo id giảm dần 
-			$order = ($this->order == '') ? array($this->table.'.'.$this->key, 'desc') : $this->order;
-			$this->db->order_by($order[0], $order[1]);
+//			$order = ($this->order == '') ? array($this->table.'.'.$this->key, 'desc') : $this->order;
+//			$this->db->order_by($order[0], $order[1]);
 		}
 		
 		// Thêm điều kiện limit cho câu truy vấn thông qua biến $input['limit'] 

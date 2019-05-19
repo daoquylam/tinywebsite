@@ -20,7 +20,7 @@
 			<figure>
 				<a href="index.html"><img src="<?php echo public_url();?>site/img/logo_sticky.png" width="155" height="36" data-retina="true" alt="" class="logo_sticky"></a>
 			</figure>
-			  <form>
+			  <form method="post" name="login">
 				<div class="access_social">
 					<a href="#0" class="social_bt facebook">Login with Facebook</a>
 					<a href="#0" class="social_bt google">Login with Google</a>
@@ -29,7 +29,7 @@
 				<div class="divider"><span>Or</span></div>
 				<div class="form-group">
 					<label>Email</label>
-					<input type="email" class="form-control" name="email" id="email">
+					<input type="email" class="form-control" name="<?php echo set_value('email')?>" id="email">
 					<i class="icon_mail_alt"></i>
 				</div>
 				<div class="form-group">
@@ -46,7 +46,8 @@
 					</div>
 					<div class="float-right mt-1"><a id="forgot" href="javascript:void(0);">Forgot Password?</a></div>
 				</div>
-				<a href="#0" class="btn_1 rounded full-width">Login to Panagea</a>
+<!--				<a href="#0" class="btn_1 rounded full-width">Login to Panagea</a>-->
+                                <input type="submit" value="Đăng nhập" class="btn_1 rounded full-width">
 				<div class="text-center add_top_10">New to Panagea? <strong><a href="register.html">Sign up!</a></strong></div>
 			</form>
 			<div class="copy">© 2018 Panagea</div>

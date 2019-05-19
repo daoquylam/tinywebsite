@@ -38,110 +38,24 @@
 				<p>Là những sản phẩm được rất nhiều khách hàng chọn lựa</p>
 			</div>
 			<div id="reccomended" class="owl-carousel owl-theme">
-				<div class="item">
+				
+				<?php foreach ($listsanpham as $row):?>
+                                <div class="item">
 					<div class="box_grid">
 						<figure>
 							<a href="tour-detail.html"><img src="<?php echo public_url();?>/site/img/tour_1.jpg" class="img-fluid" alt="" width="800" height="533"><div class="read_more"><span>Xem thêm</span></div></a>
 						</figure>
 						<div class="wrapper">
-							<h3><a href="tour-detail.html">Bàn ghế gỗ sưa</a></h3>
-							<p>Tuyệt tác bộ bàn ghế chế tác từ gỗ sưa bởi những nghệ nhân chuyên nghiệp</p>
-							<span class="price">Giá chỉ từ <strong>$54</strong> /bộ</span>
+							<h3><a href="tour-detail.html"><?php echo $row->TenSanPham;?></a></h3>
+							<p><?php echo $row->MoTa;?></p>
+							<span class="price">Giá chỉ từ <strong>$<?php echo $row->Gia;?></strong> /bộ</span>
 						</div>
 					</div>
 				</div>
 				<!-- /item -->
-				<div class="item">
-					<div class="box_grid">
-						<figure>
-							<a href="tour-detail.html"><img src="<?php echo public_url();?>/site/img/tour_1.jpg" class="img-fluid" alt="" width="800" height="533"><div class="read_more"><span>Xem thêm</span></div></a>
-						</figure>
-						<div class="wrapper">
-							<h3><a href="tour-detail.html">Bàn ghế gỗ sưa</a></h3>
-							<p>Tuyệt tác bộ bàn ghế chế tác từ gỗ sưa bởi những nghệ nhân chuyên nghiệp</p>
-							<span class="price">Giá chỉ từ <strong>$54</strong> /bộ</span>
-						</div>
-					</div>
-				</div>
+                                <?php endforeach;?>
 				<!-- /item -->
-				<div class="item">
-					<div class="box_grid">
-						<figure>
-							<a href="tour-detail.html"><img src="<?php echo public_url();?>/site/img/tour_1.jpg" class="img-fluid" alt="" width="800" height="533"><div class="read_more"><span>Xem thêm</span></div></a>
-						</figure>
-						<div class="wrapper">
-							<h3><a href="tour-detail.html">Bàn ghế gỗ sưa</a></h3>
-							<p>Tuyệt tác bộ bàn ghế chế tác từ gỗ sưa bởi những nghệ nhân chuyên nghiệp</p>
-							<span class="price">Giá chỉ từ <strong>$54</strong> /bộ</span>
-						</div>
-					</div>
-				</div>
-				<!-- /item -->
-				<div class="item">
-					<div class="box_grid">
-						<figure>
-							<a href="tour-detail.html"><img src="<?php echo public_url();?>/site/img/tour_1.jpg" class="img-fluid" alt="" width="800" height="533"><div class="read_more"><span>Xem thêm</span></div></a>
-						</figure>
-						<div class="wrapper">
-							<h3><a href="tour-detail.html">Bàn ghế gỗ sưa</a></h3>
-							<p>Tuyệt tác bộ bàn ghế chế tác từ gỗ sưa bởi những nghệ nhân chuyên nghiệp</p>
-							<span class="price">Giá chỉ từ <strong>$54</strong> /bộ</span>
-						</div>
-					</div>
-				</div>
-				<!-- /item -->
-				<div class="item">
-					<div class="box_grid">
-						<figure>
-							<a href="tour-detail.html"><img src="<?php echo public_url();?>/site/img/tour_1.jpg" class="img-fluid" alt="" width="800" height="533"><div class="read_more"><span>Xem thêm</span></div></a>
-						</figure>
-						<div class="wrapper">
-							<h3><a href="tour-detail.html">Bàn ghế gỗ sưa</a></h3>
-							<p>Tuyệt tác bộ bàn ghế chế tác từ gỗ sưa bởi những nghệ nhân chuyên nghiệp</p>
-							<span class="price">Giá chỉ từ <strong>$54</strong> /bộ</span>
-						</div>
-					</div>
-				</div>
-				<!-- /item -->
-				<div class="item">
-					<div class="box_grid">
-						<figure>
-							<a href="tour-detail.html"><img src="<?php echo public_url();?>/site/img/tour_1.jpg" class="img-fluid" alt="" width="800" height="533"><div class="read_more"><span>Xem thêm</span></div></a>
-						</figure>
-						<div class="wrapper">
-							<h3><a href="tour-detail.html">Bàn ghế gỗ sưa</a></h3>
-							<p>Tuyệt tác bộ bàn ghế chế tác từ gỗ sưa bởi những nghệ nhân chuyên nghiệp</p>
-							<span class="price">Giá chỉ từ <strong>$54</strong> /bộ</span>
-						</div>
-					</div>
-				</div>
-				<!-- /item -->
-				<div class="item">
-					<div class="box_grid">
-						<figure>
-							<a href="tour-detail.html"><img src="<?php echo public_url();?>/site/img/tour_1.jpg" class="img-fluid" alt="" width="800" height="533"><div class="read_more"><span>Xem thêm</span></div></a>
-						</figure>
-						<div class="wrapper">
-							<h3><a href="tour-detail.html">Bàn ghế gỗ sưa</a></h3>
-							<p>Tuyệt tác bộ bàn ghế chế tác từ gỗ sưa bởi những nghệ nhân chuyên nghiệp</p>
-							<span class="price">Giá chỉ từ <strong>$54</strong> /bộ</span>
-						</div>
-					</div>
-				</div>
-				<!-- /item -->
-				<div class="item">
-					<div class="box_grid">
-						<figure>
-							<a href="tour-detail.html"><img src="<?php echo public_url();?>/site/img/tour_1.jpg" class="img-fluid" alt="" width="800" height="533"><div class="read_more"><span>Xem thêm</span></div></a>
-						</figure>
-						<div class="wrapper">
-							<h3><a href="tour-detail.html">Bàn ghế gỗ sưa</a></h3>
-							<p>Tuyệt tác bộ bàn ghế chế tác từ gỗ sưa bởi những nghệ nhân chuyên nghiệp</p>
-							<span class="price">Giá chỉ từ <strong>$54</strong> /bộ</span>
-						</div>
-					</div>
-				</div>
-				<!-- /item -->
+				
 			</div>
 			<!-- /carousel -->
 			<div class="container">
