@@ -10,21 +10,21 @@ Class MY_Controller extends CI_Controller
         parent::__construct();
         
         $controller = $this->uri->segment(1);
-        switch ($controller)
-        {
-            case 'admin' :
-                {
-                    //xu ly cac du lieu khi truy cap vao trang admin
-                    $this->load->helper('admin');
-                    $this->_check_login();
-                    break;
-                }
-            default:
-                {
-                    //xu ly du lieu o trang ngoai
-                }
-            
-        }
+//        switch ($controller)
+//        {
+//            case 'admin' :
+//                {
+//                    //xu ly cac du lieu khi truy cap vao trang admin
+//                    $this->load->helper('admin');
+//                    $this->_check_login();
+//                    break;
+//                }
+//            default:
+//                {
+//                    //xu ly du lieu o trang ngoai
+//                }
+//            
+//        }
     }
     
     /*
