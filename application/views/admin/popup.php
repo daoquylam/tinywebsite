@@ -36,3 +36,6 @@
     <script src="<?php echo public_url('admin/')?>js/admin.js"></script>
 	<!-- Custom scripts for this page-->
     <script src="<?php echo public_url('admin/')?>js/admin-charts.js"></script>
+    <script src="<?php echo public_url('admin/')?>vendor/dropzone.min.js"></script>
+    <script src="<?php echo public_url('admin/')?>vendor/bootstrap-datepicker.js"></script>
+    <script>$('input.date-pick').datepicker();</script>

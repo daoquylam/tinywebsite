@@ -8,37 +8,44 @@
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
           <a class="nav-link" href="index.html">
             <i class="fa fa-fw fa-dashboard"></i>
-            <span class="nav-link-text">Dashboard</span>
+            <span class="nav-link-text">Trang Chủ</span>
           </a>
         </li>
-		<li class="nav-item" data-toggle="tooltip" data-placement="right" title="Messages">
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="" data-original-title="Bookings">
+          <a class="nav-link" href="bookings.html">
+            <i class="fa fa-fw fa-calendar-check-o"></i>
+            <span class="nav-link-text">Đặt Hàng <span class="badge badge-pill badge-primary">6 New</span></span>
+          </a>
+        </li>
+	<li class="nav-item" data-toggle="tooltip" data-placement="right" title="Messages">
           <a class="nav-link" href="messages.html">
             <i class="fa fa-fw fa-envelope-open"></i>
             <span class="nav-link-text">Messages</span>
           </a>
         </li>
-		<li class="nav-item" data-toggle="tooltip" data-placement="right" title="" data-original-title="Bookings">
-          <a class="nav-link" href="bookings.html">
-            <i class="fa fa-fw fa-calendar-check-o"></i>
-            <span class="nav-link-text">Bookings <span class="badge badge-pill badge-primary">6 New</span></span>
-          </a>
-        </li>
-		<li class="nav-item" data-toggle="tooltip" data-placement="right" title="My listings">
+	
+	<li class="nav-item" data-toggle="tooltip" data-placement="right" title="My listings">
           <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseMylistings" data-parent="#mylistings">
             <i class="fa fa-fw fa-list"></i>
-            <span class="nav-link-text">My listings</span>
+            <span class="nav-link-text">Đơn hàng</span>
           </a>
           <ul class="sidenav-second-level collapse" id="collapseMylistings">
             <li>
-              <a href="listings.html">Pending <span class="badge badge-pill badge-primary">6</span></a>
+              <a href="listings.html">Chờ thực hiện <span class="badge badge-pill badge-primary">6</span></a>
             </li>
 			<li>
-              <a href="listings.html">Active <span class="badge badge-pill badge-success">6</span></a>
+              <a href="listings.html">Đã Thanh Toán <span class="badge badge-pill badge-success">6</span></a>
             </li>
 			<li>
               <a href="listings.html">Expired <span class="badge badge-pill badge-danger">6</span></a>
             </li>
           </ul>
+        </li>
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Add listing">
+          <a class="nav-link" href="/tinywebsite/admin/additem">
+            <i class="fa fa-fw fa-plus-circle"></i>
+            <span class="nav-link-text">Thêm sản phẩm</span>
+          </a>
         </li>
 		<li class="nav-item" data-toggle="tooltip" data-placement="right" title="Reviews">
           <a class="nav-link" href="reviews.html">
@@ -52,12 +59,7 @@
             <span class="nav-link-text">Bookmarks</span>
           </a>
         </li>
-		<li class="nav-item" data-toggle="tooltip" data-placement="right" title="Add listing">
-          <a class="nav-link" href="add-listing.html">
-            <i class="fa fa-fw fa-plus-circle"></i>
-            <span class="nav-link-text">Add listing</span>
-          </a>
-        </li>
+	
 		<li class="nav-item" data-toggle="tooltip" data-placement="right" title="My profile">
           <a class="nav-link" href="user-profile.html">
             <i class="fa fa-fw fa-user"></i>

@@ -20,5 +20,8 @@
   <link href="<?php echo public_url('admin/')?>vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
   <!-- Plugin styles -->
   <link href="<?php echo public_url('admin/')?>vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
+  <link href="<?php echo public_url('admin/')?>vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
+  <link href="<?php echo public_url('admin/')?>vendor/dropzone.css" rel="stylesheet">
+  <link href="<?php echo public_url('admin/')?>css/date_picker.css" rel="stylesheet">
   <!-- Your custom styles -->
   <link href="<?php echo public_url('admin/')?>css/custom.css" rel="stylesheet">
